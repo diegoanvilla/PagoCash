@@ -27,6 +27,13 @@ export function AuthProvider({ children }) {
   };
   const signIn = async (email, password, nombre, userName, telefono) => {
     try {
+      const matchUsername = await firebase
+        .firestore()
+        .collection("users")
+        .where("userName", "==", userName)
+        .get();
+      if (!matchUsername.empty)
+        throw { message: "Nombre de usuario ya esta en uso" };
       return await auth
         .createUserWithEmailAndPassword(email, password)
         .then(async (user) => {
@@ -44,11 +51,11 @@ export function AuthProvider({ children }) {
             })
             .catch((err) => {
               user.user.delete();
-              alert("un error ha ocurrido");
+              throw err;
             });
         });
     } catch (err) {
-      console.log(err.message);
+      throw err;
     }
   };
 

@@ -11,6 +11,7 @@ function BlockchainContext({ children }) {
   const [balance, setBalance] = useState();
 
   const checkBalance = async () => {
+    if (!userMainWallet) return setBalance("No Wallet");
     setBalance("Cargando");
     const provider = new ethers.providers.JsonRpcProvider(LatamRPC);
     const userBalance = await provider.getBalance(userMainWallet.wallet);

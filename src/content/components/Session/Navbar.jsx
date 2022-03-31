@@ -27,9 +27,9 @@ function Navbar() {
       </div>
       <span
         className="material-icons-outlined"
-        onClick={() => navigate("/session")}
+        onClick={() => navigate("/new-wallet")}
       >
-        person_add
+        wallet
       </span>
       <span
         className="material-icons-outlined"
