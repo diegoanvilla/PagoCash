@@ -1,0 +1,92 @@
+@use "./Variables/index.scss" as c;
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.blue {
+  color: c.$Blue !important;
+}
+.orange {
+  color: c.$Orange !important;
+}
+.white {
+  color: c.$White !important;
+}
+.black {
+  color: c.$Black !important;
+}
+.green {
+  color: c.$Green !important;
+}
+.grey {
+  color: c.$DarkGrey !important;
+}
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+.logo-small {
+  width: 50px;
+  height: 50px;
+  max-width: 100%;
+}
+.blue-background {
+  background-color: c.$Blue;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.primary-button {
+  background-color: c.$White;
+  border-radius: 10px;
+  color: c.$Blue;
+  padding: 10px;
+}
+.secondary-button {
+  background-color: c.$Blue;
+  border-style: solid;
+  border-width: 1px;
+  border-color: c.$White;
+  border-radius: 10px;
+  color: c.$White;
+  padding: 10px;
+}
+.w-100 {
+  width: 100% !important;
+}
+.h-100 {
+  height: 100% !important;
+}
+.w-80 {
+  width: 80% !important;
+}
+.text-center {
+  text-align: center;
+}
+.error {
+  color: c.$Red;
+}
+.word-break {
+  word-break: break-all;
+}
+form {
+  position: relative;
+}
+.center-y {
+  display: flex;
+  align-items: center;
+}
+.big-icon {
+  font-size: 5em;
+}
+.dots {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}

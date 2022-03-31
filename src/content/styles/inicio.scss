@@ -1,0 +1,15 @@
+@use "./Variables/index.scss" as c;
+body {
+  background-color: c.$Blue;
+  color: c.$White;
+}
+.inicio {
+  width: 100vw;
+  height: 100vh;
+  background-color: c.$Blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}

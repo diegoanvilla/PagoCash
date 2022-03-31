@@ -1,0 +1,103 @@
+.wrapper {
+  position: absolute;
+  background-color: #f3f3f349;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.wrapper-no-background {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.circle {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #f3f3f349;
+  border-radius: 50%;
+  -webkit-animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) infinite;
+          animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) infinite;
+  transform-origin: bottom center;
+  position: relative;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    transform: translateY(-50px);
+    background-color: #f3f3f349;
+  }
+  50% {
+    transform: translateY(0px);
+    background-color: #fb6204;
+  }
+  100% {
+    transform: translateY(-50px);
+    background-color: #f3f3f349;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(-50px);
+    background-color: #f3f3f349;
+  }
+  50% {
+    transform: translateY(0px);
+    background-color: #fb6204;
+  }
+  100% {
+    transform: translateY(-50px);
+    background-color: #f3f3f349;
+  }
+}
+.circle-1 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.circle-2 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.circle-3 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.circle-4 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.circle-5 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.circle-6 {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.circle-7 {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+.circle-8 {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}/*# sourceMappingURL=Loading.css.map */

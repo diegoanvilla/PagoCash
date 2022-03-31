@@ -1,0 +1,64 @@
+@use "../Variables/index.scss" as c;
+.session-wrapper {
+  position: relative;
+}
+.session-container {
+  padding: 5%;
+  box-sizing: border-box;
+  margin-bottom: 7vh;
+  height: 100vh;
+  overflow: auto;
+}
+.session-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  align-items: center;
+}
+.session-header h3 {
+  display: flex;
+  align-items: center;
+}
+.session-header span {
+  font-size: 3em;
+}
+.account-balance {
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 5em;
+}
+.transaction-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  gap: 1em;
+}
+.transaction-buttons button {
+  height: 7vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.wallet-selected {
+  background-color: c.$White;
+  color: c.$Black;
+  width: 100%;
+  text-align: center;
+  margin: 5vh 0;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.wallet-selected-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+  font-family: "Smooch Sans" !important;
+}
+.wallet-selected-button span {
+  position: absolute;
+  left: 0;
+}

@@ -1,0 +1,31 @@
+.access-form-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.access-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  flex-direction: column;
+  background-color: white;
+  color: #000850;
+  padding: 5%;
+  border-radius: 10px;
+  width: 80vw;
+  max-width: 100% !important;
+}
+
+input {
+  background-color: #f3f3f3;
+  border-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+}/*# sourceMappingURL=access.css.map */

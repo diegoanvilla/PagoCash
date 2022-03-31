@@ -1,0 +1,31 @@
+@use "./Variables/index.scss" as c;
+.access-form-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.access-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  flex-direction: column;
+  background-color: c.$White;
+  color: c.$Blue;
+  padding: 5%;
+  border-radius: 10px;
+  //   min-width: ;
+  width: 80vw;
+  max-width: 100% !important;
+}
+input {
+  background-color: c.$Grey;
+  border-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+}

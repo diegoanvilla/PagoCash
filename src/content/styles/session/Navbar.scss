@@ -1,0 +1,18 @@
+@use "../Variables/index.scss" as c;
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 75px;
+  background-color: c.$Grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.navbar * {
+  text-decoration: none;
+  font-size: 2em;
+  color: c.$Orange;
+}
