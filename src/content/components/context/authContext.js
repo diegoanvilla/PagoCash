@@ -3,6 +3,7 @@ import firebase, { auth, firestore } from "../../../utils/firebase";
 import { runTransaction } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import Loading from "../Loading";
+import { ethers } from "ethers";
 import { toHaveErrorMessage } from "@testing-library/jest-dom/dist/matchers";
 const AuthContext = React.createContext();
 export function useAuth() {
@@ -121,6 +122,8 @@ export function AuthProvider({ children }) {
   };
 
   const addNewWallet = async (wallet) => {
+    if (!ethers.utils.isAddress(wallet.wallet))
+      throw { message: "Wallet invalida" };
     const matchName = await firebase
       .firestore()
       .collection("users")

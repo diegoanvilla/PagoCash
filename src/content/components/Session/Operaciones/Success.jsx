@@ -14,7 +14,7 @@ function Success() {
       <Balance></Balance>
       <div className="text-center mb-20">
         <span class="material-icons-outlined big-icon orange">price_check</span>
-        <h1 className="mb-20">Transaccion aceptada</h1>
+        <h1 className="mb-20">Transaccion en proceso</h1>
         <h4>Checkea el status de la transaccion presionando aca</h4>
       </div>
       <div className="secondary-button">

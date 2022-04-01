@@ -21,6 +21,7 @@ function AddWallet() {
 
   const createWallet = async () => {
     setLoading(true);
+    setError("");
     try {
       await addNewWallet(wallet);
       if (wallet.privKey) {
