@@ -97,7 +97,7 @@ const RetiroForm = ({ metodo }) => {
               placeholder="Numero de telefono del Pago Movil"
             />
             <input type="number" required placeholder="Cedula" />
-            <input type="number" required placeholder="Banco" />
+            <input type="text" required placeholder="Banco" />
           </>
         )}
         <button type="submit" className="secondary-button w-100">
@@ -138,7 +138,7 @@ const CargarForm = ({ metodo }) => {
               placeholder="Numero de telefono del Pago Movil"
             />
             <input type="number" required placeholder="Cedula" />
-            <input type="number" required placeholder="Banco" />
+            <input type="text" required placeholder="Banco" />
           </>
         )}
         <button type="submit" className="secondary-button w-100">
