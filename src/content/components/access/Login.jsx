@@ -4,8 +4,8 @@ import Loading from "../Loading";
 function Login({ setAccessForm }) {
   const { logIn } = useAuth();
   const [login, setLogin] = useState({
-    emailLog: "",
-    passwordLog: "",
+    email: "",
+    password: "",
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
@@ -23,7 +23,7 @@ function Login({ setAccessForm }) {
     const { id, value } = e.target;
     setLogin((prevState) => ({
       ...prevState,
-      [id]: value,
+      [id]: id === "email" ? value.trim() : value,
     }));
   };
   return (
@@ -32,7 +32,7 @@ function Login({ setAccessForm }) {
         className="access-form"
         onSubmit={(e) => {
           e.preventDefault();
-          loginUser(login.emailLog, login.passwordLog);
+          loginUser(login.email, login.password);
         }}
       >
         {loading && <Loading></Loading>}
@@ -40,7 +40,7 @@ function Login({ setAccessForm }) {
         <h1>Ingresa</h1>
         <input
           type="text"
-          id="emailLog"
+          id="email"
           value={login.email}
           onChange={handleChange}
           placeholder="Telefono o Correo"
@@ -49,7 +49,7 @@ function Login({ setAccessForm }) {
           type="password"
           value={login.password}
           onChange={handleChange}
-          id="passwordLog"
+          id="password"
           placeholder="Contraseña"
         />
         <button className="secondary-button w-100">Entrar</button>

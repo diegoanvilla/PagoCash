@@ -21,7 +21,6 @@ function Navbar() {
       >
         watch_later
       </span>
-      {/* <span className="material-icons-outlined">send</span> */}
       <div className="blue-background" onClick={() => navigate("/session")}>
         <img className="logo-small " src={logo} alt="" />
       </div>

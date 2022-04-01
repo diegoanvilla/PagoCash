@@ -17,7 +17,8 @@ function Register({ setAccessForm }) {
     const { id, value } = e.target;
     setRegister((prevState) => ({
       ...prevState,
-      [id]: value,
+      // [id]: value,
+      [id]: id === "email" ? value.trim() : value,
     }));
   };
   const signInUser = async () => {

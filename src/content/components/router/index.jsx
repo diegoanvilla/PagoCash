@@ -10,7 +10,6 @@ import { AuthProvider } from "../context/authContext.js";
 import BlockchainContext from "../context/BlockchainContext";
 import AddWallet from "../Session/AddWallet";
 import Success from "../Session/Operaciones/Success";
-
 import "../../styles/index.css";
 import Operacion from "../Session/Operaciones/Operacion";
 function Index() {
