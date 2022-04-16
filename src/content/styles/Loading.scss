@@ -24,7 +24,7 @@
   display: inline-block;
   width: 15px;
   height: 15px;
-  background-color: c.$TransaprentGrey;
+  background-color: transparent;
   border-radius: 50%;
   animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) infinite;
   transform-origin: bottom center;
@@ -33,7 +33,7 @@
 @keyframes loading {
   0% {
     transform: translateY(-50px);
-    background-color: c.$TransaprentGrey;
+    background-color: transparent;
   }
   50% {
     transform: translateY(0px);
@@ -41,7 +41,7 @@
   }
   100% {
     transform: translateY(-50px);
-    background-color: c.$TransaprentGrey;
+    background-color: transparent;
   }
 }
 .circle-1 {

@@ -26,7 +26,7 @@ function Navbar() {
       </div>
       <span
         className="material-icons-outlined"
-        onClick={() => navigate("/new-wallet")}
+        onClick={() => navigate("/wallets")}
       >
         wallet
       </span>

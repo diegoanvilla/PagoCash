@@ -60,6 +60,18 @@ export function AuthProvider({ children }) {
     }
   };
 
+  const getWallet = async (wallet) => {
+    return await (
+      await firebase
+        .firestore()
+        .collection("users")
+        .doc(currentUser.uid)
+        .collection("wallets")
+        .doc(wallet)
+        .get()
+    ).data();
+  };
+
   const setNewMainWallet = async (wallet) => {
     var walletDocRef = firebase
       .firestore()
@@ -83,6 +95,38 @@ export function AuthProvider({ children }) {
     } catch (err) {
       console.log(err);
       alert(err.message);
+    }
+  };
+
+  const deleteWallet = async (wallet) => {
+    var walletDocRef = firebase
+      .firestore()
+      .collection("users")
+      .doc(currentUser.uid)
+      .collection("wallets")
+      .doc(wallet);
+    try {
+      await walletDocRef.get().then(async (wallet) => {
+        await walletDocRef.delete();
+        if (!wallet.data().main) return;
+        await firebase
+          .firestore()
+          .collection("users")
+          .doc(currentUser.uid)
+          .collection("wallets")
+          .where("main", "==", false)
+          .limit(1)
+          .get()
+          .then(async (newMainWallet) => {
+            if (newMainWallet.empty) return;
+            await newMainWallet.forEach(async (mainWallet) => {
+              await mainWallet.ref.update({ main: true });
+              setUserMainWallet(mainWallet.data());
+            });
+          });
+      });
+    } catch (err) {
+      throw err;
     }
   };
 
@@ -203,6 +247,8 @@ export function AuthProvider({ children }) {
     setNewMainWallet,
     getOperacion,
     setUserMain,
+    deleteWallet,
+    getWallet,
   };
   return (
     <AuthContext.Provider value={value}>

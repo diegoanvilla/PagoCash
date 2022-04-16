@@ -186,12 +186,12 @@ const RetiroSuccess = ({ ammount }) => {
         <h3 className="mb-20 text-center">
           Por ultimo, por favor introduzca la llave privada de su cartera:
         </h3>
-        <p className="text-center orange">
+        <p className="text-center orange mb-20">
           <b>{userMainWallet.name}</b>
         </p>
         <p className="text-center mb-20 word-break">{userMainWallet.wallet}</p>
         <input
-          type="text"
+          type="password"
           value={privKey}
           required
           id="privKey"

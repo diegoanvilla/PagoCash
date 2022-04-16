@@ -12,6 +12,9 @@ import AddWallet from "../Session/AddWallet";
 import Success from "../Session/Operaciones/Success";
 import "../../styles/index.css";
 import Operacion from "../Session/Operaciones/Operacion";
+import Wallets from "../Session/Wallets";
+import Wallet from "../Session/Wallet";
+
 function Index() {
   return (
     <>
@@ -61,6 +64,28 @@ function Index() {
                   element={
                     <Session>
                       <Success />
+                    </Session>
+                  }
+                />
+              </Route>
+              <Route exact path="/wallets" element={<PrivateRoute />}>
+                <Route
+                  exact
+                  path="/wallets"
+                  element={
+                    <Session>
+                      <Wallets />
+                    </Session>
+                  }
+                />
+              </Route>
+              <Route exact path="/wallet/:wallet" element={<PrivateRoute />}>
+                <Route
+                  exact
+                  path="/wallet/:wallet"
+                  element={
+                    <Session>
+                      <Wallet />
                     </Session>
                   }
                 />

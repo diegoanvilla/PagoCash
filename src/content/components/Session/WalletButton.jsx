@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Wallets from "./Wallets";
+import WalletsList from "./WalletsList";
 import { useAuth } from "../context/authContext";
-// import { useBlockChainContext } from '../context/BlockchainContext'
 function WalletButton() {
   const { userMainWallet } = useAuth();
   const [walletList, setWalletList] = useState(false);
@@ -24,7 +23,7 @@ function WalletButton() {
           )}
         </h1>
       </div>
-      {walletList && <Wallets setWalletList={setWalletList}></Wallets>}
+      {walletList && <WalletsList setWalletList={setWalletList}></WalletsList>}
     </>
   );
 }

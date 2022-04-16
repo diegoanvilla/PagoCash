@@ -1,6 +1,6 @@
 .wrapper {
   position: absolute;
-  background-color: #f3f3f349;
+  background-color: rgba(243, 243, 243, 0.2862745098);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@
   display: inline-block;
   width: 15px;
   height: 15px;
-  background-color: #f3f3f349;
+  background-color: transparent;
   border-radius: 50%;
   -webkit-animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) infinite;
           animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) infinite;
@@ -36,7 +36,7 @@
 @-webkit-keyframes loading {
   0% {
     transform: translateY(-50px);
-    background-color: #f3f3f349;
+    background-color: transparent;
   }
   50% {
     transform: translateY(0px);
@@ -44,14 +44,14 @@
   }
   100% {
     transform: translateY(-50px);
-    background-color: #f3f3f349;
+    background-color: transparent;
   }
 }
 
 @keyframes loading {
   0% {
     transform: translateY(-50px);
-    background-color: #f3f3f349;
+    background-color: transparent;
   }
   50% {
     transform: translateY(0px);
@@ -59,7 +59,7 @@
   }
   100% {
     transform: translateY(-50px);
-    background-color: #f3f3f349;
+    background-color: transparent;
   }
 }
 .circle-1 {

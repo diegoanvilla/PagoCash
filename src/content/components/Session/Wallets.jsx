@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { useAuth } from "../context/authContext";
-import "../../styles/session/Popup.css";
+import React, { useEffect, useState } from "react";
+import Header from "./Header";
+import WalletButton from "./WalletButton";
 import Loading from "../Loading";
+import { useAuth } from "../context/authContext";
+import "../../styles/session/Wallet.css";
 import { useNavigate } from "react-router-dom";
-function Wallets({ setWalletList }) {
+
+function Wallets() {
   const navigate = useNavigate();
+  const { getUserWallets, setNewMainWallet, deleteWallet } = useAuth();
   const [wallets, setWallets] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { getUserWallets, setNewMainWallet } = useAuth();
   const changeMainWallet = async (wallet) => {
     setLoading(true);
     try {
@@ -17,6 +20,19 @@ function Wallets({ setWalletList }) {
       });
     } catch (err) {
       alert("algo salio mal");
+      setLoading(false);
+    }
+  };
+  const deleteSelectedWallet = async (wallet) => {
+    setLoading(true);
+    try {
+      deleteWallet(wallet).then(async () => {
+        await displayWallets();
+        setLoading(false);
+      });
+    } catch (err) {
+      alert("algo salio mal");
+      console.log(err);
       setLoading(false);
     }
   };
@@ -37,23 +53,32 @@ function Wallets({ setWalletList }) {
     return app();
   }, []);
   return (
-    <div className="popup-overflow" onClick={() => setWalletList(false)}>
-      <div className="popup-box" onClick={(e) => e.stopPropagation()}>
-        <h1 className="blue text-center">Tus Wallets</h1>
-        <button
-          className="secondary-button w-100"
-          onClick={() => navigate("/new-wallet")}
-        >
-          <h2>Agregar Wallet</h2>
-        </button>
-        <div className="wallet-list-box">
-          <>
-            {wallets.length > 0 ? (
-              <>
-                {wallets.map((doc) => {
-                  return (
-                    <div key={doc.name} className="wallet-list-item">
-                      <p>{doc.name}</p>
+    <div>
+      <Header />
+      <h1 className="text-center mb-20">Tus Wallets</h1>
+      <WalletButton />
+      <div className="wallet-list-box-page">
+        <>
+          {wallets.length > 0 ? (
+            <>
+              {wallets.map((doc) => {
+                return (
+                  <div
+                    key={doc.name}
+                    className="wallet-list-item-page"
+                    onClick={() => navigate(`/wallet/${doc.wallet}`)}
+                  >
+                    <p>{doc.name}</p>
+                    <div className="wallet-buttons">
+                      <span
+                        className="material-icons-outlined grey"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          deleteSelectedWallet(doc.wallet);
+                        }}
+                      >
+                        delete
+                      </span>
                       {doc.main ? (
                         <span className="material-icons-outlined orange">
                           star
@@ -61,23 +86,26 @@ function Wallets({ setWalletList }) {
                       ) : (
                         <span
                           className="material-icons-outlined grey"
-                          onClick={() => changeMainWallet(doc.wallet)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            changeMainWallet(doc.wallet);
+                          }}
                         >
                           star
                         </span>
                       )}
                     </div>
-                  );
-                })}
-              </>
-            ) : (
-              <div className="wallet-list-item text-center h-100">
-                <p>Crea una nueva Wallet</p>
-              </div>
-            )}
-          </>
-          {loading && <Loading />}
-        </div>
+                  </div>
+                );
+              })}
+            </>
+          ) : (
+            <div className="wallet-list-item-page text-center h-100">
+              <p>Crea una nueva Wallet</p>
+            </div>
+          )}
+        </>
+        {loading && <Loading />}
       </div>
     </div>
   );
